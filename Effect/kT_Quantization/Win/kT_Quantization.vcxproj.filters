@@ -16,7 +16,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="kT_PalpostPiPL.rc">
+    <ResourceCompile Include="kT_QuantizationPiPL.rc">
       <Filter>Resources</Filter>
     </ResourceCompile>
   </ItemGroup>
@@ -78,10 +78,10 @@
     <ClInclude Include="..\..\..\Headers\AE_PluginData.h">
       <Filter>Headers\AE</Filter>
     </ClInclude>
-    <ClInclude Include="..\kT_Palpost.h">
+    <ClInclude Include="..\kT_Quantization.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\kT_Palpost_Strings.h">
+    <ClInclude Include="..\kT_Quantization_Strings.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,11 +92,11 @@
     <ClCompile Include="..\..\..\Util\MissingSuiteError.cpp">
       <Filter>Supporting code</Filter>
     </ClCompile>
-    <ClCompile Include="..\kT_Palpost.cpp" />
-    <ClCompile Include="..\kT_Palpost_Strings.cpp" />
+    <ClCompile Include="..\kT_Quantization.cpp" />
+    <ClCompile Include="..\kT_Quantization_Strings.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="..\kT_PalpostPiPL.r">
+    <CustomBuild Include="..\kT_QuantizationPiPL.r">
       <Filter>Resources</Filter>
     </CustomBuild>
   </ItemGroup>

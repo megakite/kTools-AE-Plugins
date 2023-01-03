@@ -13,7 +13,7 @@ resource 'PiPL' (16000) {
 		},
 		/* [2] */
 		Name {
-			"KT Palpost"
+			"KT Quantization"
 		},
 		/* [3] */
 		Category {
@@ -57,7 +57,7 @@ resource 'PiPL' (16000) {
 		},
 		/* [11] */
 		AE_Effect_Match_Name {
-			"ADBE KT Palpost"
+			"ADBE KT Quantization"
 		},
 		/* [12] */
 		AE_Reserved_Info {

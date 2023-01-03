@@ -1,4 +1,4 @@
-#include "kT_Palpost.h"
+#include "kT_Quantization.h"
 
 typedef struct {
 	A_u_long	index;
@@ -9,8 +9,8 @@ typedef struct {
 
 TableString		g_strs[StrID_NUMTYPES] = {
 	StrID_NONE,						"",
-	StrID_Name,						"kT Palpost",
-	StrID_Description,				"kTools Palleted posterization",
+	StrID_Name,						"kT Quantization",
+	StrID_Description,				"kTools Quantization",
 	StrID_BitDepth_Param_Name,		"Bit Depth",
 };
 

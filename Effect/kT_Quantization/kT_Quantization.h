@@ -1,11 +1,11 @@
 /*
-	kT Palpost.h
+	kT Quantization.h
 */
 
 #pragma once
 
-#ifndef kT_Palpost_H
-#define kT_Palpost_H
+#ifndef KT_QUANTIZATION_H
+#define KT_QUANTIZATION_H
 
 typedef unsigned char		u_char;
 typedef unsigned short		u_short;
@@ -36,7 +36,7 @@ typedef short int			int16;
 #include "AEFX_ChannelDepthTpl.h"
 #include "AEGP_SuiteHandler.h"
 
-#include "kT_Palpost_Strings.h"
+#include "kT_Quantization_Strings.h"
 
 /* Versioning information */
 
@@ -49,14 +49,14 @@ typedef short int			int16;
 
 /* Parameter defaults */
 
-#define	kT_Palpost_BITDEPTH_MIN		1
-#define	kT_Palpost_BITDEPTH_MAX		8
-#define	kT_Palpost_BITDEPTH_DFLT	3
+#define	kT_Quantization_BITDEPTH_MIN	1
+#define	kT_Quantization_BITDEPTH_MAX	8
+#define	kT_Quantization_BITDEPTH_DFLT	3
 
 enum {
-	PALPOST_INPUT = 0,
-	PALPOST_BITDEPTH,
-	PALPOST_NUM_PARAMS
+	Quantization_INPUT = 0,
+	Quantization_BITDEPTH,
+	Quantization_NUM_PARAMS
 };
 
 enum {
@@ -67,20 +67,14 @@ enum {
 #define FIXED_MUL(x, y)	((PF_Fixed)((((int64_t)(x)) * (y)) >> 16))
 #define FIXED_DIV(x, y)	((PF_Fixed)((((int64_t)(x)) << 16) / (y)))
 
-// Constants used in color space conversion
-#define FACTOR_I	(0.5957 * 2)
-#define FACTOR_Q	(0.5226 * 2)
+// Constants used in color space conversion, according to the docs.
+#define FACTOR_I	0x0000D6CDi32	// 1 / (0.5959 * 2)
+#define FACTOR_Q	0x0000F4E2i32	// 1 / (0.5227 * 2)
 
 
 typedef struct {
-	PF_FpShort Y, I, Q;
-} kT_YIQ_Pixel;
-
-typedef struct {
-	kT_YIQ_Pixel	*pltYiqP;
-	kT_YIQ_Pixel	*bufYiqP;
-	A_u_char		bitDepth;
-	A_long			frameWidth;
+	PF_Pixel8	*bufP;
+	A_long		frameWidth;
 } PosterizeInfo, *PosterizeInfoP, **PosterizeInfoH;
 
 
@@ -98,4 +92,4 @@ extern "C" {
 
 }
 
-#endif // kT Palpost_H
+#endif // kT Quantization_H
