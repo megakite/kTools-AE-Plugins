@@ -1,3 +1,3 @@
-# kTools_AE_Plugins (WIP)
+# kTools AE Plugins
 
 Plugins for Adobe After Effects.
